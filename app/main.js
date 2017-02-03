@@ -6,7 +6,7 @@ if(require('electron-squirrel-startup')) return;
 
 let win
 
-const installExtenstions = () => {
+const installExtensions = () => {
   const installer = require('electron-devtools-installer');
   require('electron-debug')({showDevTools: true});
 
@@ -26,13 +26,12 @@ function createWindow () {
   win = new BrowserWindow({width: 800, height: 600})
 
   if (process.env.NODE_ENV === 'development') {
-    installExtenstions()
+    installExtensions()
     win.webContents.openDevTools()
     win.loadURL('http://localhost:3000/')
   } else {
     win.loadURL(`file://${__dirname}/index.html`)
   }
-
 
   win.on('closed', () => {
     win = null
