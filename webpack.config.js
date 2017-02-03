@@ -4,9 +4,6 @@ var merge = require('webpack-merge');
 const webpack = require('webpack');
 const path = require('path');
 
-// awesome-typescript-loader
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-
 // webpack
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -88,7 +85,6 @@ if(TARGET === 'server') {
 
     plugins: [
       new WebpackNotifierPlugin(),
-      new ForkCheckerPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
