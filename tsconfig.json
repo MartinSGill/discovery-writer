@@ -9,7 +9,9 @@
     "sourceMap": true,
     "outDir": "build/tsc",
     "jsx": "react",
-    "types": ["mocha", "node"]
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "include": [
       "src/**/*.ts",
